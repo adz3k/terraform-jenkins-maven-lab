@@ -14,6 +14,13 @@ The setup includes:
 - Deployment of a Spring Boot application
 - Public access to the running application
 
+## CI/CD Pipeline
+
+- Built using Jenkins and Maven  
+- Automated build process triggered manually  
+- Application compiled and packaged using Maven  
+- Build logs verified through Jenkins console output  
+
 ---
 
 ## Architecture
