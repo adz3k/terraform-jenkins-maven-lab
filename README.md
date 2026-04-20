@@ -8,11 +8,11 @@ It simulates a real DevOps workflow where infrastructure is created programmatic
 
 The setup includes:
 
-- Automated EC2 provisioning using Terraform  
-- User data scripts for environment configuration  
-- Java and Maven installation  
-- Deployment of a Spring Boot application  
-- Public access to the running application  
+- Automated EC2 provisioning using Terraform
+- User data scripts for environment configuration
+- Java and Maven installation
+- Deployment of a Spring Boot application
+- Public access to the running application
 
 ---
 
@@ -20,10 +20,10 @@ The setup includes:
 
 The infrastructure consists of:
 
-- AWS EC2 instances provisioned via Terraform  
-- Security Groups allowing HTTP (80) and application access (8080)  
-- User data scripts to install dependencies and run the application  
-- Spring Boot application built and executed with Maven  
+- AWS EC2 instances provisioned via Terraform
+- Security Groups allowing HTTP (80) and application access (8080)
+- User data scripts to install dependencies and run the application
+- Spring Boot application built and executed with Maven
 
 ---
 
@@ -40,22 +40,37 @@ The infrastructure consists of:
 ├── userdata2.sh
 ├── screenshots/
 └── README.md
-Prerequisites
-Terraform installed
-AWS account
-AWS CLI configured (aws configure)
-SSH key pair (or Terraform-managed)
-Setup & Deployment
+```
+
+---
+
+## Prerequisites
+
+- Terraform installed
+- AWS account
+- AWS CLI configured (`aws configure`)
+- SSH key pair (or Terraform-managed)
+
+---
+
+## Setup & Deployment
+
+```bash
 git clone https://github.com/adz3k/terraform-jenkins-maven-lab.git
 cd terraform-jenkins-maven-lab
 
 cp terraform.tfvars.example terraform.tfvars
+```
 
 Edit your variables, then run:
 
+```bash
 terraform init
 terraform plan
 terraform apply
+```
+
+---
 
 ## Screenshots (Proof of Deployment)
 
@@ -74,26 +89,37 @@ Shows successful infrastructure creation and output values
 ### Application Running
 ![App Running](screenshots/04-app-running.png)
 
-What This Project Demonstrates
-Infrastructure as Code (Terraform)
-AWS resource provisioning
-Automated environment setup via user data
-Application deployment using Maven
-End-to-end system from infrastructure → running application
-Notes
-Sensitive files (.tfvars, state files, keys) are excluded via .gitignore
-Ensure AWS Free Tier limits are respected
-Future Improvements
-Add remote state (S3 + DynamoDB)
-Use Auto Scaling Group instead of single EC2
-Add Application Load Balancer
-Integrate Jenkins CI/CD pipeline
-Refactor into Terraform modules
-Author
+---
 
-Armstrong Lawal
-BSc (Hons) Computing Graduate
+## What This Project Demonstrates
+
+- Infrastructure as Code (Terraform)
+- AWS resource provisioning
+- Automated environment setup via user data
+- Application deployment using Maven
+- End-to-end system from infrastructure → running application
+
+---
+
+## Notes
+
+- Sensitive files (`.tfvars`, state files, keys) are excluded via `.gitignore`
+- Ensure AWS Free Tier limits are respected
+
+---
+
+## Future Improvements
+
+- Add remote state (S3 + DynamoDB)
+- Use Auto Scaling Group instead of single EC2
+- Add Application Load Balancer
+- Integrate Jenkins CI/CD pipeline
+- Refactor into Terraform modules
+
+---
+
+## Author
+
+Armstrong Lawal  
+BSc (Hons) Computing Graduate  
 Aspiring Cloud / DevOps Engineer
-
-
-
